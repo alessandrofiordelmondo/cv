@@ -1,0 +1,218 @@
+\documentclass[7.5pt,a4paper]{article}
+\usepackage[a4paper,top=10mm,bottom=12mm,left=10mm,right=10mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize Alessandro Fiordelmondo — Curriculum Vitae — \today}
+\fancyfoot[R]{\scriptsize \thepage}
+\setlength{\footskip}{7mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=*}
+\urlstyle{tt}
+
+
+\begin{document}
+
+% TITLE
+curriculum vitae\\[2mm]
+\Large\textbf{alessandro fiordelmondo}\\
+\rule{\textwidth}{0.4pt}
+\normalsize
+
+% INFO
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+% EMAIL
+\small\textbf{e-mail}\\ 
+{% for e in cv.personal.email %}[[e|latex]]{% if not loop.last %}\\{% endif %}{% endfor %}\\
+\textbf{phone:} [[cv.personal.phone|latex]]\\
+\textbf{nationality:} Italian\\
+\textbf{date of birth:} [[cv.personal.birthDateFormatted|latex]]\\
+\textbf{address:} Padova, Italy
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\small\textbf{website}\\
+\href{[[cv.personal.website]]}{[[cv.personal.website|latex]]}\\
+\textbf{GitHub:}
+\href{[[cv.personal.link[0].url]]}{[[cv.personal.link[0].url|latex]]}\\
+\textbf{ORCID:} [[cv.personal.orcid|latex]]
+\end{minipage}
+
+\subsection*{about me}
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+{% for para in cv.personal.bioText.split('\n') %}[[para|latex]]\\
+{% endfor %}
+
+
+\subsection*{education \& research experiences}
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.educationResearch %}
+\begin{minipage}[t]{0.28\textwidth}
+{% if e.dateFormatted %}
+[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+\\\scriptsize [[e.location|latex]]
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+\normalsize
+\textbf{[[e.qualification|latex]]}\\
+[[e.institution|latex]]
+{% if e.department %}\\ \small [[e.department|latex]]{% endif %}
+{% if e.fieldText %}\\Field of study: [[e.fieldText|latex]]{% endif %}
+{% for d in e.descriptionPrimary %}\\[[d|latex]]{% endfor %}
+\end{minipage}
+
+\vspace{0.25cm}
+{% endfor %}
+
+\subsection*{pubblications}
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.publication %}
+\scriptsize [[e.type|latex]]\\
+\normalsize {% for a in e.author %}[[a|latex]]{% if not loop.last %}, {% endif %}{% endfor %}
+([[e.year|latex]]) \textit{[[e.title|latex]]}.
+In
+{%if e.type=="Journal article"%} [[e.journal|latex]]
+{% if e.volume %}, vol.[[e.volume|latex]]{% endif %}{% if e.publisher %}, [[e.publisher|latex]]{% endif %}
+{% elif e.type=="Conference paper"%}[[e.conference|latex]]{% if e.publisher %}, [[e.publisher|latex]]{% endif %}
+{% endif %}
+\vspace{0.1cm}
+\scriptsize {% if e.doi %} \textbf{DOI}: \href{https://doi.org/[[e.doi]]}{https://doi.org/[[e.doi|latex]]}{% endif %}
+\scriptsize {% if e.isbn %} \textbf{ISBN}: [[e.isbn|latex]] {% endif %}
+\scriptsize {% if e.issn %} \textbf{ISSN}: [[e.issn|latex]] {% endif %}
+\scriptsize {% if e.url %} \textbf{URL}: \href{[[e.url]]}{[[e.url|latex]]}{% endif %}
+\vspace{0.15cm}
+{% endfor %}
+
+\subsection*{teaching}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.teaching %}
+\begin{minipage}[t]{0.28\textwidth}
+{% if e.dateFormatted %}
+[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+\\\scriptsize [[e.location|latex]]
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+\normalsize
+\textbf{[[e.course|latex]]}\\
+\small Institute: [[e.institution|latex]]
+{% if e.department %}\\\small Dept: [[e.department|latex]]{% endif %}{% if e.academicYears %}\\\small Academic Years: [[e.academicYears|latex]]{% endif %}
+\vspace{0.1cm}
+{% if e.language %}\\\scriptsize Language: [[e.language|latex]]{% endif %}{% if e.ore %}\\\scriptsize H: [[e.ore|latex]]{% endif %}{% if e.contract %}\\\scriptsize \textbf{Contract type (IT)}: [[e.contract|latex]]{% endif %}
+\end{minipage}
+
+\vspace{0.25cm}
+{% endfor %}
+
+\subsection*{exhibitions}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.exhibition %}
+\begin{minipage}[t]{0.28\textwidth}
+{% if e.dateFormatted %}
+[[e.dateFormatted|latex]]
+{% if e.replicas|length == 1 %}
+\scriptsize [[e.replicas[0].location|latex]]
+{% endif %}
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+\small [[e.type|latex]]
+{%if e.role%}\\\scriptsize Role: [[e.role|join(', ')|latex]]{% endif %}
+\\ \normalsize \textbf{[[e.title|latex]]}
+{% if e.authors %}\par\scriptsize by [[e.authors|join(', ')|latex]]{% endif %}
+{% if e.with %}\par\scriptsize with [[e.with|join(', ')|latex]]{% endif %}
+\vspace{0.25cm}
+{%if e.replicas|length > 1 %}
+Replicas:
+{% for r in e.replicas %}\par{% if r.dateFormatted %}\textbf{[[r.dateFormatted|latex]]} | {% endif %}[[r.event|default('')|latex]]{% if r.venue %} | [[r.venue|latex]]{% endif %}{% if r.location %} | [[r.location|latex]]{% endif %}{% endfor %}
+{%else%}
+\small [[e.replicas[0].event|default('')|latex]]{% if e.replicas[0].venue %} | [[e.replicas[0].venue|latex]]{% endif %}{% if e.replicas[0].location %} | [[e.replicas[0].location|latex]]{% endif %}
+{% endif %}
+\vspace{0.15cm}
+\scriptsize
+{% if e.description and e.description.secondary %}
+{% for paragraph in e.description.secondary.split('\n') %}
+{% if paragraph.strip() %}
+\par [[paragraph|latex]]
+{% endif %}
+{%endfor%}
+{%endif%}
+\vspace{0.1cm}
+{% if e.promotedBy %}\par\vspace{1mm}Promoted by: [[e.promotedBy|latex]]{% endif %}
+
+\end{minipage}
+
+\vspace{0.25cm}
+{% endfor %}
+
+\subsection*{invited talks, seminars \& workshops}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.talks %}
+\begin{minipage}[t]{0.28\textwidth}
+{% if e.dateFormatted %}
+[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+\\\scriptsize [[e.location|latex]]
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+\scriptsize [[e.type|latex]]
+\\\normalsize \textbf{[[e.title|latex]]}
+{% if e.with %}\par \scriptsize with [[e.with|join(', ')|latex]]{% endif %}
+{% if e.event %}\par \small [[e.event|latex]]{% endif %}
+\vspace{0.1cm}
+{% if e.venue %}\par \small [[e.venue|latex]] - {% endif %}[[e.location|latex]]
+\end{minipage}
+
+\vspace{0.25cm}
+{% endfor %}
+
+\subsection*{other work experiences}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.otherWorkExperience %}
+\begin{minipage}[t]{0.28\textwidth}
+{% if e.dateFormatted %}
+[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+\\\scriptsize [[e.location|latex]]
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+[[e.role|latex]] - \textbf{[[e.organization|latex]]}
+
+
+\vspace{0.25cm}
+{% endfor %}
+
+\end{document}
+

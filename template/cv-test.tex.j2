@@ -1,0 +1,119 @@
+\documentclass[8.5pt,a4paper]{article}
+\usepackage[a4paper,top=10mm,bottom=12mm,left=10mm,right=10mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize Alessandro Fiordelmondo — Curriculum Vitae — \today}
+\fancyfoot[R]{\scriptsize \thepage}
+\setlength{\footskip}{7mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=*}
+\urlstyle{tt}
+
+% \newcommand{\sectiontitle}[1]{
+%   \vspace{7mm}
+%   {\fontsize{10}{12}\selectfont\textbf{#1}}\\[-1mm]
+% }
+
+% \newcommand{\entry}[2]{
+%   \begin{tabularx}{\textwidth}{@{}p{42mm}@{}X@{}}
+%     \begin{minipage}[t]{42mm}\raggedright #1\end{minipage} &
+%     \begin{minipage}[t]{\linewidth}\raggedright #2\end{minipage}\\[-1mm]
+%   \end{tabularx}
+%   \vspace{2.5mm}
+% }
+
+% \newcommand{\entrysmall}[2]{
+%   \begin{tabularx}{\textwidth}{@{}p{42mm}@{}X@{}}
+%     \begin{minipage}[t]{42mm}\raggedright #1\end{minipage} &
+%     \begin{minipage}[t]{\linewidth}\raggedright #2\end{minipage}\\[-1mm]
+%   \end{tabularx}
+%   \vspace{2.5mm}
+% }
+% \newcommand{\pubentry}[2]{
+%   {\textbf{#1}}\\[-1mm]
+%   #2\\[1mm]
+% }
+
+\begin{document}
+% \fontsize{8.5}{11.9}\selectfont
+
+% Curriculum Vitae\\
+% \Large\textbf{alessandro fiordelmondo}\\
+% \normalsize
+% \vspace{6mm}
+
+% \begin{minipage}{0.48\textwidth}
+% \textbf{Email}
+% {% for e in cv.personal.email %}[[e|latex]]{% if not loop.last %}\\{% endif %}{% endfor %}
+% \textbf{Phone:} [[cv.personal.phone|latex]]
+% \textbf{Nationality:} Italian
+% \textbf{Date of birth:} [[cv.personal.birthDateFormatted|latex]]
+% \textbf{Address:} Padova, Italy 
+% \end{minipage}
+
+% \begin{minipage}{0.48\textwidth}
+% \textbf{WebSite:}
+% \href{[[cv.personal.website]]}{[[cv.personal.website|latex]]}\\
+% \textbf{GitHub:}
+% \href{[[cv.personal.link[0].url]]}{[[cv.personal.link[0].url|latex]]}\\
+% \textbf{ORCID:} [[cv.personal.orcid|latex]]
+% \end{minipage}
+
+% \sectiontitle{about me}
+% {% for para in cv.personal.bioText.split('\\n') %}[[para|latex]]\\[1.5mm]
+% {% endfor %}
+
+% \sectiontitle{education \& research experience}
+% {% for e in cv.educationResearch %}
+% \entry{{% if e.dateFormatted %}[[e.dateFormatted|latex]]\\[[e.location|latex]]{% endif %}}{\textbf{[[e.qualification|latex]]}\\
+% [[e.institution|latex]]{% if e.department %}\\[[e.department|latex]]{% endif %}{% if e.fieldText %}\\Field of study: [[e.fieldText|latex]]{% endif %}{% for d in e.descriptionPrimary %}\\[[d|latex]]{% endfor %}}
+% {% endfor %}
+
+% \sectiontitle{pubblications}
+% {% for e in cv.publication %}
+% \pubentry{[[e.type|latex]]}{[[e.citation|latex]]{% if e.doi %}\\[1mm]DOI: [[e.doi|latex]]{% endif %}{% if e.issn %}\\[1mm]ISSN: [[e.issn|latex]]{% endif %}{% if e.isbn %}\\[1mm]ISBN: [[e.isbn|latex]]{% endif %}{% if e.url %}\\[1mm]URL: \url{[[e.url]]}{% endif %}}
+% {% endfor %}
+
+% \sectiontitle{teaching}
+% {% for e in cv.teaching %}
+% \entry{{% if e.dateFormatted %}[[e.dateFormatted|latex]]\\[[e.location|latex]]{% endif %}}{[[e.course|latex]]\\Institute: [[e.institution|latex]]{% if e.department %}\\Dept: [[e.department|latex]]{% endif %}{% if e.academicYears %}\\Academic Years: [[e.academicYears|latex]]{% endif %}{% if e.language %}\\Language: [[e.language|latex]]{% endif %}{% if e.ore %}\\H:[[e.ore|latex]]{% endif %}{% if e.contract %}\\Contract type (IT): [[e.contract|latex]]{% endif %}}
+% {% endfor %}
+
+% \sectiontitle{exhibitions}
+% {% for e in cv.exhibition %}
+% \entry{\textbf{[[e.dateFormatted|latex]]}}{\textbf{[[e.type|latex]]}{% if e.role %}\\role: [[e.role|join(', ')|latex]]{% endif %}\\[1mm]
+% \textbf{[[e.title|latex]]}{% if e.authors %}\\by [[e.authors|join(', ')|latex]]{% endif %}{% if e.with %}\\with [[e.with|join(', ')|latex]]{% endif %}
+% {% for r in e.replicas %}\\[1mm]{% if r.dateFormatted %}[[r.dateFormatted|latex]] | {% endif %}[[r.event|default('')|latex]]{% if r.venue %} | [[r.venue|latex]]{% endif %}{% if r.location %} | [[r.location|latex]]{% endif %}{% endfor %}
+% {% if e.description and e.description.secondary %}\\[1mm][[e.description.secondary|latex]]{% elif e.description and e.description.primary %}\\[1mm][[e.description.primary|latex]]{% endif %}
+% {% if e.promotedBy %}\par\vspace{1mm}Promoted by: [[e.promotedBy|latex]]{% endif %}}
+% {% endfor %}
+
+% \sectiontitle{invited talks, seminars \& workshops}
+% {% for e in cv.talks %}
+% \entrysmall{\textbf{[[e.dateFormatted|latex]]}}{\textbf{[[e.type|latex]]}\\[1mm][[e.title|latex]]{% if e.with %}\\with [[e.with|join(', ')|latex]]{% endif %}{% if e.event %}\\[1mm][[e.event|latex]]{% endif %}{% if e.venue %}\\[[e.venue|latex]] - {% endif %}[[e.location|latex]]}
+% {% endfor %}
+
+% \sectiontitle{other work experience}
+% {% for e in cv.otherWorkExperience %}
+% \entrysmall{\textbf{[[e.dateFormatted|latex]]}}{\textbf{[[e.role|latex]] - [[e.organization|latex]]}\\[[e.location|latex]]\\[1mm][[e.description|join('\\\\')|latex]]}
+% {% endfor %}
+
+% \vfill
+% I hereby authorize the use of my personal data in accordance to the GDPR 679/16 - ``European regulation on the protection of personal data''.\\[3mm]
+% Padova 21 June 2026
+
+\end{document}
