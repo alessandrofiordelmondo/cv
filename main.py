@@ -80,6 +80,21 @@ def latex_escape(s):
     }
     return ''.join(replacements.get(ch, ch) for ch in s)
 
+def format_multiline_latex(text):
+    if not text:
+        return ''
+
+    paragraphs = str(text).replace('\r\n', '\n').split('\n\n')
+    formatted = []
+
+    for paragraph in paragraphs:
+        lines = paragraph.split('\n')
+        lines = [latex_escape(line.strip()) for line in lines if line.strip()]
+
+        if lines:
+            formatted.append(r'\\'.join(lines))
+
+    return r'\par\vspace{2mm}'.join(formatted)
 
 def prepare(data):
     p = data['personal']
@@ -166,6 +181,7 @@ def main():
     env = Environment(loader=FileSystemLoader(str(TEMPLATE)), autoescape=False, keep_trailing_newline=True, variable_start_string='[[', variable_end_string=']]', comment_start_string='<#', comment_end_string='#>')
     env.filters['latex'] = latex_escape
     env.filters['month_range'] = fmt_month_range
+    env.filters['multiline_latex'] = format_multiline_latex
     tex = env.get_template('cv.tex.j2').render(cv=data)
     tex_path = OUT / 'main.tex'
     tex_path.write_text(tex, encoding='utf-8')

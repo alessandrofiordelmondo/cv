@@ -359,6 +359,20 @@
   ],
   "teaching": [
     {
+      "course": "Applicazioni Forensi della psicologia cognitiva",
+      "institution": "University of Padua",
+      "department": "Department of General Psychology",
+      "location": "Padova PD ITALY",
+      "startDate": "2026-10-01",
+      "endDate": "2027-09-30",
+      "academic_year": [
+        "2026/2027"
+      ],
+      "language": "IT",
+      "contract": "Contratto di docenza",
+      "documentation": []
+    },
+    {
       "course": "Tecnologie del suono e della multimedialità (AFAM047 - ex COME/04 Elettroacustica)",
       "institution": "Conservatory \"B. Maderna - G. Lettimi\" Cesena-Rimini ",
       "department": "Electronic Music",
@@ -465,6 +479,103 @@
     }
   ],
   "exhibition": [
+    {
+      "title": "SEGNALI 2026",
+      "pieces": [
+        {
+          "title": "Respiri Silenzio",
+          "year": 2025,
+          "instrument": "low-pitched wind instrument and live electronics",
+          "authors": [
+            "Nicoletta Andreuccetti"
+          ]
+        },
+        {
+          "title": "Notturno sole",
+          "year": 2018,
+          "instrument": "flauto solo and live electronics",
+          "authors": [
+            "Nicoletta Andreuccetti"
+          ]
+        }
+      ],
+      "type": "Concert",
+      "replicas": [
+        {
+          "event": "Segnali - Arti Audiovisive e Performance",
+          "venue": "Auditorium del Conservatorio di Perugia",
+          "location": "Perugia PG ITALY",
+          "date": [
+            "2026-10-10"
+          ]
+        }
+      ],
+      "promotedBy": "Conservatorio di Musica di Perugia and Regione Umbria",
+      "role": [
+        "Live Electronics"
+      ],
+      "with": [
+        "Nicoletta Andreuccetti"
+      ],
+      "startDate": "2026-10-10",
+      "endDate": null,
+      "ongoing": false,
+      "description": {
+        "credits": "Angelica Pagliaccia (flauto basso)\nClaudia Giottoli (Flauto)\nAlessandro Fiordelmondo (Live Electronics)"
+      },
+      "images": [
+        {
+          "name": "Segnali Flayer",
+          "path": "img/2026-segnali01.jpg"
+        }
+      ],
+      "style": 0
+    },
+    {
+      "title": "CIM 2026",
+      "pieces": [
+        {
+          "title": "Respiri Silenzio",
+          "year": 2025,
+          "instrument": "low-pitched wind instrument and live electronics",
+          "authors": [
+            "Nicoletta Andreuccetti"
+          ]
+        }
+      ],
+      "type": "Concert",
+      "replicas": [
+        {
+          "event": "Colloquio di Informatica Musicale (CIM) XXV - 2026",
+          "venue": "Auditorium del Parco \"Renzo Piano\"",
+          "location": "L''Aquila AQ ITALY",
+          "date": [
+            "2026-10-13"
+          ]
+        }
+      ],
+      "promotedBy": "CIM 2026 - Conservatorio statale di Musica \"A. Casella\" and Università dell'Aquila",
+      "role": [
+        "Live Electronics"
+      ],
+      "with": [
+        "Nicoletta Andreuccetti"
+      ],
+      "startDate": "2026-10-13",
+      "endDate": null,
+      "ongoing": false,
+      "description": {
+        "secondary": "Concerto di inaugurazione di elettroAQustica 11 | Colloquio di Informatica Musicale (CIM) 2026\n\nAlice Cortegiani (Contrabass clarinet)\nAlessandro Fiordelmondo (Live Electronics)", 
+        "credits": "Alice Cortegiani (Contrabass clarinet)\nAlessandro Fiordelmondo (Live Electronics)"
+      },
+      "images": [
+        {
+          "name": "Segnali Flayer",
+          "path": "img/2026-segnali01.jpg"
+        }
+      ],
+      "style": 0
+    },
     {
       "title": "Monitor Yin Yang",
       "authors": [
@@ -1810,6 +1921,51 @@
     }
   ],
   "publication": [
+    {
+      "type": "Journal article",
+      "author": [
+        "Sara Giuriati",
+        "Anna Zuccante",
+        "Alessandro Russo",
+        "Alessandro Fiordelmondo",
+        "Matteo Spanio",
+        "Antonio Rodà",
+        "Sergio Canazza"
+      ],
+      "title": "Artificial Intelligence for Musical Cultural Heritage: Preservation, Interpretation, and Human-Centered Creativity at the Centro di Sonologia Computazionale",
+      "abstract": "Artificial intelligence is increasingly shaping the preservation, interpretation, management, and reactivation of musical cultural heritage, especially in domains affected by technological obsolescence such as computer music, electroacoustic works, and analog audio archives. This perspective and case-study article examines the research trajectory of the Centro di Sonologia Computazionale (CSC) of the University of Padua through three analytically selected research directions: AI-assisted musical co-creation, multimodal generative systems informed by psychophysical research, and AI-based preservation of musical cultural heritage. The cases were selected because they represent complementary relationships between human expertise and computation (creative dialogue, perceptually grounded generation, and historically informed preservation) and because they include both completed studies and ongoing implementations. The article distinguishes previously published results, current implementations, and prospective components. It argues that the CSC case contributes a historically grounded model in which AI augments rather than replaces musical, archival, and interpretative expertise. Case studies include generative models for Disklavier performance, multimodal systems connecting sound with taste and emotion, a custom OCR and RAG workflow for Music V, and AI modules for analog-audio preservation within the MPAI/IEEE-CAE ARP framework.",
+      "journal": "Heritage",
+      "publisher": "MDPI",
+      "volume": "9(9), 344",
+      "year": 2026,
+      "month": 9,
+      "doi": "10.3390/heritage9090344",
+      "url": "https://www.mdpi.com/2571-9408/9/9/344"
+    },
+    {
+      "type": "Conference paper",
+      "author": [
+        "Giulio Pitteri",
+        "Alessandro Russo",
+        "Alessandro Fiordelmondo",
+        "Antonio Rodà"
+      ],
+      "editor": [
+        "Antonio Origlia",
+        "Julia Sheidin",
+        "Tsvi Kuflik",
+        "Niccolò Pretto"
+      ],
+      "title": "Preserving, Reactivating, and Documenting Live Media Art and Multimedia Installations through the MDP-m App",
+      "abstract": "Since 2014, the Centro di Sonologia Computazionale (CSC) of the University of Padua has been investigating strategies for the preservation and reactivation of live media art, including music- and video-based works. This research requires to preserve both the digital content of the artworks and their various instances and reactivations over time. As a result of this research, the Multilevel Dynamic Preservation (MDP) model was developed, introducing the concept of the Digital Preservation Object (DPO), which allows for the representation of each instance of an artwork, adapting it to different re-propositions or reinterpretations over time. The MDP model has been successfully applied in the development of the MDP-m App, a novel software designed to collect, manage, and access metadata related to a specific artistic installation. The MDP-m App allows tracking the relationships between different iterations of an artwork by partitioning each one of their content into three fundamental categories: components (physical and digital components forming the artwork), score (e.g, technical schemas, performance instructions, etc.), and documentation (contextual and historical materials). The MDP-m App has been adopted to create preservation copies of various multimedia art installations, including Il tempo consuma and Autoritratto per 4 camere e 4 voci by Michele Sambin, La(m)pelle di Ahmad, and Dissonanze Circolari by Roberto Taroni, and Perseo e Andromeda by Salvatore Sciarrino, the latter of which will be described in detail in this contribution.",
+      "booktitle": "Proceedings of the Workshop on Advanced Visual Interfaces for Cultural Heritage (AVICH 2026)",
+      "conference": "Advanced Visual Interfaces for Cultural Heritage (AVICH 2026)",
+      "year": 2026,
+      "month": 6,
+      "address": "Venice, Italy",
+      "url": "https://ceur-ws.org/Vol-4252/paper1.pdf",
+      "issn": "1613-0073"
+    },
     {
       "type": "Conference paper",
       "author": [

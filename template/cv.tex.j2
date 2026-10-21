@@ -1,4 +1,4 @@
-\documentclass[7.5pt,a4paper]{article}
+\documentclass[7pt,a4paper]{article}
 \usepackage[a4paper,top=10mm,bottom=12mm,left=10mm,right=10mm]{geometry}
 \usepackage{fontspec}
 \setmainfont{Arial}
@@ -10,6 +10,11 @@
 \usepackage{xurl}
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+\definecolor{entrygray}{RGB}{242,242,242}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -33,6 +38,17 @@ curriculum vitae\\[2mm]
 \normalsize
 
 % INFO
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
 \begin{minipage}[t]{0.48\textwidth}
 \vspace{0pt}
 % EMAIL
@@ -47,23 +63,58 @@ curriculum vitae\\[2mm]
 \vspace{0pt}
 \small\textbf{website}\\
 \href{[[cv.personal.website]]}{[[cv.personal.website|latex]]}\\
-\textbf{GitHub:}
+\textbf{GitHub}\\
 \href{[[cv.personal.link[0].url]]}{[[cv.personal.link[0].url|latex]]}\\
+
+\vspace{.5cm}
 \textbf{ORCID:} [[cv.personal.orcid|latex]]
 \end{minipage}
+\end{mdframed}
 
-\subsection*{about me}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% ABOUT ME %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{about me}
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 {% for para in cv.personal.bioText.split('\n') %}[[para|latex]]\\
 {% endfor %}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\subsection*{education \& research experiences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% EDUCATION AND RESEARCH %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{education \& research experiences}
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.educationResearch %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
 [[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
@@ -75,18 +126,53 @@ curriculum vitae\\[2mm]
 \textbf{[[e.qualification|latex]]}\\
 [[e.institution|latex]]
 {% if e.department %}\\ \small [[e.department|latex]]{% endif %}
-{% if e.fieldText %}\\Field of study: [[e.fieldText|latex]]{% endif %}
-{% for d in e.descriptionPrimary %}\\[[d|latex]]{% endfor %}
-\end{minipage}
-
-\vspace{0.25cm}
+\par \vspace{0.1cm} 
+{% if e.fieldText %}
+\par \scriptsize \textbf{Field of study}: [[e.fieldText|latex]]
+{% endif %} 
+{% for d in e.descriptionPrimary %}
+\scriptsize [[d|latex]]
 {% endfor %}
+\end{minipage}
+\vspace{0.25cm}
+\end{mdframed}
+{% endfor %}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% PUBLICATIONS %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{pubblications}
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.publication %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \scriptsize [[e.type|latex]]\\
 \normalsize {% for a in e.author %}[[a|latex]]{% if not loop.last %}, {% endif %}{% endfor %}
 ([[e.year|latex]]) \textit{[[e.title|latex]]}.
@@ -101,14 +187,45 @@ In
 \scriptsize {% if e.issn %} \textbf{ISSN}: [[e.issn|latex]] {% endif %}
 \scriptsize {% if e.url %} \textbf{URL}: \href{[[e.url]]}{[[e.url|latex]]}{% endif %}
 \vspace{0.15cm}
+\end{mdframed}
 {% endfor %}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TEACHING %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{teaching}
 \normalsize
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.teaching %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
 [[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
@@ -123,16 +240,46 @@ In
 \vspace{0.1cm}
 {% if e.language %}\\\scriptsize Language: [[e.language|latex]]{% endif %}{% if e.ore %}\\\scriptsize H: [[e.ore|latex]]{% endif %}{% if e.contract %}\\\scriptsize \textbf{Contract type (IT)}: [[e.contract|latex]]{% endif %}
 \end{minipage}
-
 \vspace{0.25cm}
+\end{mdframed}
 {% endfor %}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% EXHIBITION %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{exhibitions}
 \normalsize
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.exhibition %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
 [[e.dateFormatted|latex]]
@@ -148,35 +295,77 @@ In
 {% if e.authors %}\par\scriptsize by [[e.authors|join(', ')|latex]]{% endif %}
 {% if e.with %}\par\scriptsize with [[e.with|join(', ')|latex]]{% endif %}
 \vspace{0.25cm}
+{%if e.pieces%}
+\par \scriptsize \textbf{Programme}:\par
+\begin{itemize}
+{% for p in e.pieces %}
+\item \textit{[[p.title|latex]]} ([[p.year|latex]]) by [[p.authors|join(', ')|latex]]\\ for [[p.instrument|latex]]
+{%endfor%}
+\end{itemize}
+\vspace{0.2cm}
+{%endif%}
+
 {%if e.replicas|length > 1 %}
-Replicas:
-{% for r in e.replicas %}\par{% if r.dateFormatted %}\textbf{[[r.dateFormatted|latex]]} | {% endif %}[[r.event|default('')|latex]]{% if r.venue %} | [[r.venue|latex]]{% endif %}{% if r.location %} | [[r.location|latex]]{% endif %}{% endfor %}
+    \scriptsize \textbf{Replicas}:
+    \begin{itemize}
+    {% for r in e.replicas %}\par
+        \item {% if r.dateFormatted %} \textbf{[[r.dateFormatted|latex]]} {% endif %} [[r.event|default('')|latex]] {% if r.venue %} | [[r.venue|latex]]{% endif %} {% if r.location %} | [[r.location|latex]]{% endif %}
+    {% endfor %}
+    \end{itemize}
 {%else%}
-\small [[e.replicas[0].event|default('')|latex]]{% if e.replicas[0].venue %} | [[e.replicas[0].venue|latex]]{% endif %}{% if e.replicas[0].location %} | [[e.replicas[0].location|latex]]{% endif %}
+\small [[e.replicas[0].event|default('')|latex]]{% if e.replicas[0].venue %}\\[[e.replicas[0].venue|latex]]{% endif %}{% if e.replicas[0].location %} | \scriptsize [[e.replicas[0].location|latex]]{% endif %}
 {% endif %}
-\vspace{0.15cm}
+\vspace{0.1cm}
 \scriptsize
 {% if e.description and e.description.secondary %}
-{% for paragraph in e.description.secondary.split('\n') %}
-{% if paragraph.strip() %}
-\par [[paragraph|latex]]
+[[e.description.secondary|multiline_latex]]
+{% elif e.description and e.description.credits %}
+[[e.description.credits|multiline_latex]]
 {% endif %}
-{%endfor%}
-{%endif%}
 \vspace{0.1cm}
-{% if e.promotedBy %}\par\vspace{1mm}Promoted by: [[e.promotedBy|latex]]{% endif %}
-
+{% if e.promotedBy %}\par \textbf{Promoted by}: [[e.promotedBy|latex]]{% endif %}
 \end{minipage}
-
 \vspace{0.25cm}
+\end{mdframed}
 {% endfor %}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% TALKS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{invited talks, seminars \& workshops}
 \normalsize
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.talks %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
 [[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
@@ -184,15 +373,15 @@ Replicas:
 {% endif %}
 \end{minipage}
 \begin{minipage}[t]{0.68\textwidth}
-\scriptsize [[e.type|latex]]
+\small [[e.type|latex]]
 \\\normalsize \textbf{[[e.title|latex]]}
 {% if e.with %}\par \scriptsize with [[e.with|join(', ')|latex]]{% endif %}
-{% if e.event %}\par \small [[e.event|latex]]{% endif %}
+{% if e.venue %}\par \small [[e.venue|latex]] | \scriptsize {% endif %}[[e.location|latex]]
 \vspace{0.1cm}
-{% if e.venue %}\par \small [[e.venue|latex]] - {% endif %}[[e.location|latex]]
+{% if e.event %}\par \scriptsize [[e.event|latex]]{% endif %}
 \end{minipage}
-
 \vspace{0.25cm}
+\end{mdframed}
 {% endfor %}
 
 \subsection*{other work experiences}
@@ -201,6 +390,31 @@ Replicas:
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.otherWorkExperience %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
 [[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
@@ -209,10 +423,21 @@ Replicas:
 \end{minipage}
 \begin{minipage}[t]{0.68\textwidth}
 [[e.role|latex]] - \textbf{[[e.organization|latex]]}
-
-
+{%for d in e.description%}
+\par \scriptsize [[d|latex]]
+{%endfor%}
 \vspace{0.25cm}
+\end{minipage}
+\end{mdframed}
 {% endfor %}
+
+\vfill
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+
+I hereby authorize the use of my personal data in accordance to the GDPR 679/16 - ``European regulation on the protection of personal data''.\\[3mm]
+Padova | \today \hfill \includegraphics[width=0.25\textwidth]{../sig.png}
+
 
 \end{document}
 
