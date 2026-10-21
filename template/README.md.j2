@@ -1,0 +1,113 @@
+# Alessandro Fiordelmondo CV
+
+## Curriculum Vitae
+
+# Alessandro Fiordelmondo
+
+{% for e in cv.personal.email %}
+**Email:** [[e]]  
+{% endfor %}
+**Phone:** [[cv.personal.phone]]  
+**Nationality:** Italian  
+**Date of birth:** [[cv.personal.birthDateFormatted]]  
+**Address:** Padova, Italy  
+**Website:** [[cv.personal.website]]  
+**GitHub:** [[cv.personal.link[0].url]]  
+**ORCID:** [[cv.personal.orcid]]
+
+## About me
+
+[[cv.personal.bioText]]
+
+## Education & research experiences
+
+{% for e in cv.educationResearch %}
+### [[e.qualification]] `[[e.startDate|month_range(e.endDate, e.endDate is none)]]{% if e.location %} — [[e.location]]{% endif %}`
+
+[[e.institution]]  
+{% if e.department %}**Department**: [[e.department]]  
+{% endif %}{% if e.fieldText %}<sub>**Field of study**: [[e.fieldText]]</sub>  
+{% endif %}{% for d in e.descriptionPrimary %}<sub>[[d]]</sub>  
+{% endfor %}
+{% endfor %}
+## Publications
+
+{% for e in cv.publication %}
+### [[e.title]]
+
+**[[e.type]]**  
+{% for a in e.author %}[[a]]{% if not loop.last %}, {% endif %}{% endfor %} ([[e.year]]). *[[e.title]]*.{% if e.type == 'Journal article' %} [[e.journal]]{% if e.volume %}, vol. [[e.volume]]{% endif %}{% if e.publisher %}, [[e.publisher]]{% endif %}{% elif e.type == 'Conference paper' %} [[e.conference]]{% if e.publisher %}, [[e.publisher]]{% endif %}{% endif %}  
+{% if e.doi %}DOI: [[e.doi]]  
+{% endif %}{% if e.isbn %}ISBN: [[e.isbn]]  
+{% endif %}{% if e.issn %}ISSN: [[e.issn]]  
+{% endif %}{% if e.url %}URL: [[e.url]]  
+{% endif %}
+{% endfor %}
+
+## Teaching
+
+{% for e in cv.teaching %}
+### [[e.course]]`[[e.startDate|month_range(e.endDate, e.endDate is none)]]{% if e.location %} — [[e.location]]{% endif %}`
+
+**Institute**: [[e.institution]]  
+{% if e.department %}**Department**: [[e.department]]  
+{% endif %}{% if e.academicYears %}<sub>Academic years: [[e.academicYears]]</sub>  
+{% endif %}{% if e.language %}<sub>Language: [[e.language]]</sub>  
+{% endif %}{% if e.ore %}<sub>Hours: [[e.ore]]</sub>  
+{% endif %}{% if e.contract %}<sub>Contract type (IT): [[e.contract]]</sub>  
+{% endif %}
+{% endfor %}
+## Exhibitions
+
+{% for e in cv.exhibition %}
+### [[e.title]] `[[e.dateFormatted]]`
+
+Type: [[e.type]]  
+{% if e.role %}Role: [[e.role|join(', ')]]  
+{% endif %}{% if e.authors %}By: [[e.authors|join(', ')]]  
+{% endif %}{% if e.with %}With: [[e.with|join(', ')]]  
+
+{% endif %}{% if e.pieces %}<sub>**Programme**</sub>  
+{% for p in e.pieces %}<sub>*[[p.title]]* ([[p.year]]) by [[p.authors|join(', ')]], for [[p.instrument]]</sub>  
+{% endfor %}{% endif %}{% if e.replicas|length > 1 %}<sub>**Replicas**</sub>  
+{% for r in e.replicas %}{% if r.dateFormatted %}<sub>[[r.dateFormatted]]</sub>{% endif %}{% if r.event %}{% if r.dateFormatted %} <sub>—</sub> {% endif %}<sub>[[r.event]]</sub>{% endif %}{% if r.venue %}{% if r.dateFormatted or r.event %} <sub>—</sub> {% endif %}<sub>[[r.venue]]</sub>{% endif %}{% if r.location %}{% if r.dateFormatted or r.event or r.venue %} <sub>—</sub> {% endif %}<sub>[[r.location]]</sub>{% endif %}  
+{% endfor %}{% elif e.replicas|length == 1 %}<sub>[[e.replicas[0].event|default('')]]</sub>{% if e.replicas[0].venue %} <sub>— [[e.replicas[0].venue]]</sub>{% endif %}{% if e.replicas[0].location %} <sub>— [[e.replicas[0].location]]</sub>{% endif %}  
+{% endif %}{% if e.description and e.description.secondary %}<sub>Description: [[e.description.secondary]]</sub>  
+{% elif e.description and e.description.credits %}<sub>Credits: [[e.description.credits]]</sub>  
+{% endif %}{% if e.promotedBy %}<sub>**Promoted by**: [[e.promotedBy]]</sub>  
+{% endif %}
+{% endfor %}
+## Invited talks, seminars & workshops
+
+{% for e in cv.talks %}
+### [[e.title]] `[[e.dateFormatted]]`
+
+**[[e.type]]**  
+{% if e.with %}With: [[e.with|join(', ')]]  
+{% endif %}{% if e.venue %}Venue: [[e.venue]]  
+{% endif %}{% if e.event %}Event: [[e.event]]  
+{% endif %}
+{% endfor %}
+## Other work experiences
+
+{% for e in cv.otherWorkExperience %}
+### [[e.role]] — [[e.organization]] `[[e.startDate|month_range(e.endDate, e.endDate is none)]]{% if e.location %} — [[e.location]]{% endif %}`
+
+{% for d in e.description %}
+[[d]]  
+{% endfor %}
+{% endfor %}
+
+
+## Repository info
+
+This project generates the curriculum vitae in both PDF and Markdown from [`cv.json`](cv.json).
+
+### Generate the CV
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 main.py
+```
+
+The command updates `output/main.pdf`, `output/main.tex`, and this README. The PDF and README are rendered from the same prepared data.

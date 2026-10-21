@@ -183,8 +183,14 @@ def main():
     env.filters['month_range'] = fmt_month_range
     env.filters['multiline_latex'] = format_multiline_latex
     tex = env.get_template('cv.tex.j2').render(cv=data)
+    readme = env.get_template('README.md.j2').render(
+        cv=data,
+        today=date.today().strftime('%d %b %Y'),
+    )
+
     tex_path = OUT / 'main.tex'
     tex_path.write_text(tex, encoding='utf-8')
+    (ROOT / 'README.md').write_text(readme, encoding='utf-8')
 
     if not shutil.which('xelatex'):
         raise SystemExit('xelatex not found')

@@ -368,7 +368,7 @@ In
 {% endif %}
 \begin{minipage}[t]{0.28\textwidth}
 {% if e.dateFormatted %}
-[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+[[e.dateFormatted|latex]]
 \\\scriptsize [[e.location|latex]]
 {% endif %}
 \end{minipage}
