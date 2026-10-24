@@ -98,6 +98,20 @@ Type: [[e.type]]
 {% endfor %}
 {% endfor %}
 
+## Creative works
+{% for e in cv.creativeWork %}
+
+### [[e.title]] `[[e.year]]`
+
+[[e.type]]  
+[[e.description|multiline_latex]]
+{% for u in e.url %}
+{%if u.url|length > 0 %}
+[[u.name|latex]] [[[u.url|latex]]]([[u.url|latex]])
+{%endif%}
+{%endfor%}
+{%endfor%}
+
 
 ## Repository info
 

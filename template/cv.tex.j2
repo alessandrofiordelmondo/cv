@@ -431,6 +431,53 @@ In
 \end{mdframed}
 {% endfor %}
 
+\subsection*{creative works}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+{% for e in cv.creativeWork %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
+\scriptsize \textit{[[e.type|latex]]}
+\par \small [[e.year|latex]]
+\par \normalsize \textbf{[[e.title|latex]]}
+\par \small [[e.description|multiline_latex]]
+{% for u in e.url %}
+{%if u.url|length > 0 %}
+\par \scriptsize \textbf{[[u.name|latex]]} \href{[[u.url|latex]]}{[[u.url|latex]]}
+{%endif%}
+{%endfor%}
+\vspace{0.5cm}
+\end{mdframed}
+{%endfor%}
+
+
+
+
 \vfill
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}

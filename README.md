@@ -795,6 +795,135 @@ Technical coordinator for the festival SEGNALI 2017 audiovisual and performance 
 
 
 
+## Creative works
+
+
+### Sonificazione Lunare `2025`
+
+Installation  
+Multichannel IoS Installation. Real-time Sonification of Astronomical data
+
+
+GitHub Repository ['https://github.com/alessandrofiordelmondo/sonificazionelunare'](https://github.com/alessandrofiordelmondo/sonificazionelunare)
+
+
+
+
+### AQSoundscape `2025`
+
+Installation  
+Multichannel IoS Installation. Real-time Sonification of Air Quality data (Max/MSP version)
+
+
+GitHub Repository - Max/MSP demo ['https://github.com/alessandrofiordelmondo/AQSoundscape'](https://github.com/alessandrofiordelmondo/AQSoundscape)
+
+
+
+
+### Status I `2023`
+
+Music piece  
+Six tracks fixed media and Live Electronics
+
+
+Stereo version ['https://archive.org/details/status1\\_202607'](https://archive.org/details/status1\_202607)
+
+
+
+
+### BACA `2021`
+
+Music piece  
+Quadraphonic Acousmatics piece
+
+
+Stereo version ['https://archive.org/details/baca\\_20260709'](https://archive.org/details/baca\_20260709)
+
+
+
+
+### Virtual Sound Sculpture `2020`
+
+Installation  
+Instaractive audio installation (Android App)
+
+
+GitHub Repository ['https://github.com/alessandrofiordelmondo/virtual-sound-sculptures'](https://github.com/alessandrofiordelmondo/virtual-sound-sculptures)
+
+
+
+
+### Touching++ `2017`
+
+Audiovisual piece  
+5.1 Surround Audiovisual Composition\\Video by Francesco Matteo Ceccarelli
+
+
+Stereo version video ['https://archive.org/details/touching\\_plusplus'](https://archive.org/details/touching\_plusplus)
+
+
+
+
+### Handling `2017`
+
+Music piece  
+Composition for Live Electronics, Clarinet, and Tam-Tam\\With Nicola Fumo Frattegiani
+
+
+
+
+
+### Moment V `2017`
+
+Installation  
+Web Installation of Vertical Music
+
+
+The web site is currently unavailable (reactivation state) ['http://www.momentv.org'](http://www.momentv.org)
+
+
+
+
+### Spazi improvvisati `2017`
+
+Music piece  
+Open composition for Live Electronics and two acoustic instruments
+
+
+video[stereo mix recorded with Zoom H5 + AKG-C414] ['https://www.youtube.com/watch?v=o3LzeKUOao8\\&t=1537s'](https://www.youtube.com/watch?v=o3LzeKUOao8\&t=1537s)
+
+
+
+
+### Ritratto a Fontivegge `2016`
+
+Audiovisual piece  
+Stereo Acousmatic composition\\with Nicola Fumo Frattegiani and Leonardo Damiani
+
+
+
+
+
+### Anopticonpanopticon `2016`
+
+Installation  
+Steel plate, sound exciter and light\\With Ensemble A23
+
+
+
+
+
+### Musica Verticale `2016`
+
+Album  
+Vertical Music Compositions (Album)
+
+
+Bandcamp link ['https://musicaverticale.bandcamp.com/album/musica-verticale'](https://musicaverticale.bandcamp.com/album/musica-verticale)
+
+
+
+
 
 ## Repository info
 

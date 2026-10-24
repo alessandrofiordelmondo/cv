@@ -529,7 +529,7 @@
           "path": "img/2026-segnali01.jpg"
         }
       ],
-      "style": 0
+      "style": 2
     },
     {
       "title": "CIM 2026",
@@ -574,7 +574,7 @@
           "path": "img/2026-segnali01.jpg"
         }
       ],
-      "style": 0
+      "style": 2
     },
     {
       "title": "Monitor Yin Yang",
@@ -671,14 +671,6 @@
         {
           "name": "Flayer",
           "path": "img/2025-caravanserraglio01.jpg"
-        },
-        {
-          "name": "Astrolabe",
-          "path": "img/2025-caravanserraglio02.jpg"
-        },
-        {
-          "name": "Caravanserraglio",
-          "path": "img/2025-caravanserraglio03.jpg"
         }
       ],
       "url": [
@@ -2228,7 +2220,7 @@
       "url": [
         {
           "name": "GitHub Repository - Max/MSP demo",
-          "url": "https://github.com/alessandrofiordelmondo/AQSoundscape/blob/main/aqsoundscape-web.gif"
+          "url": "https://github.com/alessandrofiordelmondo/AQSoundscape"
         }
       ],
       "image": "img/2025-aqsoundscape.gif"
@@ -2241,7 +2233,7 @@
       "url": [
         {
           "name": "Stereo version",
-          "url": ""
+          "url": "https://archive.org/details/status1_202607"
         }
       ],
       "image": "img/2023-statusi01.png"
@@ -2254,7 +2246,7 @@
       "url": [
         {
           "name": "Stereo version",
-          "url": ""
+          "url": "https://archive.org/details/baca_20260709"
         }
       ],
       "image": "img/2021-baca.png"
@@ -2280,7 +2272,7 @@
       "url": [
         {
           "name": "Stereo version video",
-          "url": ""
+          "url": "https://archive.org/details/touching_plusplus"
         }
       ],
       "image": "img/2017-touching.gif"
@@ -2327,7 +2319,7 @@
     {
       "title": "Ritratto a Fontivegge",
       "type": "Audiovisual piece",
-      "descritpion": "Stereo Acousmatic composition with Nicola Fumo Frattegiani and Leonardo Damiani",
+      "descritpion": "Stereo Acousmatic composition\nwith Nicola Fumo Frattegiani and Leonardo Damiani",
       "year": 2016,
       "url": [
         {
