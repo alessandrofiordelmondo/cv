@@ -140,6 +140,80 @@ curriculum vitae\\[2mm]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% TEACHING %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{teaching}
+\normalsize
+\vspace{-0.5cm}
+\rule{\textwidth}{0.4pt}
+\vspace{0.1cm}
+
+{% for e in cv.teaching %}
+{% if loop.index0 is even %}
+\begin{mdframed}[
+    backgroundcolor=entrygray,
+    linecolor=entrygray,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% else %}
+\begin{mdframed}[
+    backgroundcolor=white,
+    linecolor=white,
+    linewidth=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+{% endif %}
+
+\begin{minipage}[t]{0.28\textwidth}
+\vspace{0pt}
+{% if e.dateFormatted %}
+[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
+\\
+\scriptsize [[e.location|latex]]
+{% endif %}
+\end{minipage}
+\begin{minipage}[t]{0.68\textwidth}
+\vspace{0pt}
+
+\textbf{\normalsize [[e.course|latex]]}
+{% if e.code %}\\\small [[e.code|latex]]{% endif %}
+
+\par [[e.institution|latex]]
+{% if e.department %}\\\small [[e.department|latex]]{% endif %}
+
+{% if e.hours %}
+\par \scriptsize \textbf{Teaching hours}: [[e.hours|latex]]
+{% endif %}
+
+{% if e.description %}
+\par \scriptsize [[e.description|multiline_latex]]
+{% endif %}
+
+\scriptsize \textbf{Accademic years}: {% for ay in e.academic_year %}[[ay|latex]]{% if not loop.last %}, {% endif %}{% endfor %}
+
+\end{minipage}
+
+\vspace{0.25cm}
+\end{mdframed}
+{% endfor %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% PUBLICATIONS %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,6 +222,7 @@ curriculum vitae\\[2mm]
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
 {% for e in cv.publication %}
+{% if e.type!="Album" %}
 {% if loop.index0 is even %}
 \begin{mdframed}[
     backgroundcolor=entrygray,
@@ -188,19 +263,20 @@ In
 \scriptsize {% if e.url %} \textbf{URL}: \href{[[e.url]]}{[[e.url|latex]]}{% endif %}
 \vspace{0.15cm}
 \end{mdframed}
+{% endif %}
 {% endfor %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%% TEACHING %%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{teaching}
-\normalsize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Releases %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{releases}
 \vspace{-0.5cm}
 \rule{\textwidth}{0.4pt}
 \vspace{0.1cm}
-{% for e in cv.teaching %}
+{% for e in cv.publication %}
+{% if e.type=="Album" %}
 {% if loop.index0 is even %}
 \begin{mdframed}[
     backgroundcolor=entrygray,
@@ -226,22 +302,28 @@ In
     skipbelow=0pt
 ]
 {% endif %}
-\begin{minipage}[t]{0.28\textwidth}
-{% if e.dateFormatted %}
-[[e.startDate|month_range(e.endDate, e.endDate is none)|latex]]
-\\\scriptsize [[e.location|latex]]
+\noindent
+\scriptsize [[e.type|latex]] released [[e.month|latex]]-[[e.year|latex]]\\
+\par\textbf{\normalsize [[ e.title|latex ]]}
+\par
+\small
+\small [[ e.label|latex ]] {% if e.address %} \scriptsize [[ e.address|latex ]] {% endif %}
+{% if e.catalogNumber %}
+\scriptsize Catalog No. [[ e.catalogNumber|latex ]]
 {% endif %}
-\end{minipage}
-\begin{minipage}[t]{0.68\textwidth}
-\normalsize
-\textbf{[[e.course|latex]]}\\
-\small Institute: [[e.institution|latex]]
-{% if e.department %}\\\small Dept: [[e.department|latex]]{% endif %}{% if e.academicYears %}\\\small Academic Years: [[e.academicYears|latex]]{% endif %}
-\vspace{0.1cm}
-{% if e.language %}\\\scriptsize Language: [[e.language|latex]]{% endif %}{% if e.ore %}\\\scriptsize H: [[e.ore|latex]]{% endif %}{% if e.contract %}\\\scriptsize \textbf{Contract type (IT)}: [[e.contract|latex]]{% endif %}
-\end{minipage}
-\vspace{0.25cm}
+
+\vspace{0.15cm}
+{% if e.pieces %}
+\par \scriptsize \textbf{Tracks}: {% for p in e.pieces %}{% if not loop.first %}, {% endif %}\textit{[[p.title|latex]]} ([[p.year|latex]]) by [[p.authors|join(', ')|latex]]{% endfor %}
+{% endif %}
+
+% Credits
+{% if e.description.credits %}
+\par\scriptsize\textbf{Credits}: \scriptsize [[e.description.credits|latex]]
+{% endif %}
+\vspace{0.15cm}
 \end{mdframed}
+{% endif %}
 {% endfor %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

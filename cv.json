@@ -310,7 +310,7 @@
       "role": "Software developer",
       "organization": "University of Padua",
       "startDate": "2025-09-24",
-      "endDate": "2026-10-23",
+      "endDate": "2025-10-23",
       "ongoing": false,
       "description": [
         "Development of interactive systems for the show \"Caravanserraglio\"."
@@ -359,6 +359,20 @@
   ],
   "teaching": [
     {
+      "course": "Tecnologie del suono e della multimedialità (AFAM047)",
+      "institution": "Conservatory \"Arrigo Boito\" Parma ",
+      "department": "Electronic Music",
+      "location": "Parma PR ITALY",
+      "startDate": "2026-11-02",
+      "endDate": null,
+      "academic_year": [
+        "2026/2027"
+      ],
+      "language": "IT",
+      "contract": "Contratto di lavoro a tempo determinato",
+      "documentation": []
+    },
+    {
       "course": "Applicazioni Forensi della psicologia cognitiva",
       "institution": "University of Padua",
       "department": "Department of General Psychology",
@@ -378,7 +392,7 @@
       "department": "Electronic Music",
       "location": "Cesena FC ITALY",
       "startDate": "2026-01-21",
-      "endDate": null,
+      "endDate": "2026-10-31",
       "academic_year": [
         "2025/2026"
       ],
@@ -451,7 +465,7 @@
       "institution": "University of Padua",
       "department": "Department of Information Engineering (DEI)",
       "location": "Padova PD ITALY",
-      "startDate": "2020-06-15",
+      "startDate": "2023-04-04",
       "endDate": null,
       "academic_year": [
         "2023/2024",
@@ -632,7 +646,7 @@
           "location": "Padova PD ITALY",
           "date": [
             "2025-10-17",
-            "2026-10-18"
+            "2025-10-18"
           ]
         },
         {
@@ -1161,7 +1175,7 @@
         "primary": "Disallineato is a critically acclaimed theatrical production by the Franco-Algerian author Hakim Djaziri and produced by the Rome-based company MAGMA06. It stars actor Nour Zrafi under the direction of Valentina Favella.\nThe show is a intimate reflection on cultural belonging, exile, identity loss, and extremism. It explores the life of an immigrant torn between the protective warmth of his upbringing, the rise of fundamentalism in Algeria, and the pull of extremist ideologies. Djaziri contrasts the protagonist's path with his own, highlighting how his ability to distance himself from the ideology of hate made all the difference.\nThe MAGMA06's production is notable for its technical setup: The audio design features a human-machine interface developed in collaboration with Audio Innova, a spin-off of the University of Padua.\nCreative Team: Features voice-over work by Christian Iansante and Mariagrazia Pompei (who founded MAGMA06)",
         "credits": "Italian translations and direction: VALENTINA FAVELLA\nActor: NOUR ZARAFI\nvoice over: CHRISTIAN IANSANTE and MARIAGRAZIA POMPEI\norginal music: GIORGIO BERTINELLI\nlive electronics and interaction design: ALESSANDRO FIORDELMONDO\nlight design ALESSIO SORO"
       },
-      "promotedBy": "MAGAM06, ROMA T and Audio Innova",
+      "promotedBy": "MAGAM06, ROMA TRE and Audio Innova",
       "images": [
         {
           "name": "Disallineato",
@@ -1913,6 +1927,71 @@
     }
   ],
   "publication": [
+    {
+      "type": "Album",
+      "title": "Luigi Nono Volume 2: Works with Flute",
+      "pieces": [
+        {
+          "title": "A Pierre. Dell’azzurro silenzio, inquietum",
+          "year": 1985,
+          "instrument": "contrabass ﬂute in G, contrabass clarinet in B ﬂat and live electronics",
+          "authors": ["Luigi Nono"]
+        },
+        {
+          "title": "Das atmende Klarsein, fragmente",
+          "year": "1980-1987",
+          "instrument": "bass flute, magnetic tape and live electronics",
+          "authors": ["Luigi Nono"]
+        },
+        {
+          "title": "Musiche per Manzù (acousmatic version)",
+          "year": 1969,
+          "instrument": "magnetic tape",
+          "authors": ["Luigi Nono"]
+        },
+        {
+          "title": "A “Omaggio a Luigi Nono” (2006) for ",
+          "year": 2006,
+          "instrument": "piccolo, tape and live electronics",
+          "authors": ["Roberto Fabbriciani"]
+        }
+      ],
+      "description": {
+        "primary": "Luigi Nono (1924 –1990) was a great innovator in the use of spatialization of sound and experimentation with performance space, non-linear time and the collapsing between sound and silence.\nBeginning in 1959, he distanced himself from serial orthodoxy and the Ferienkurse compositional scene. His new works reflected a concern in political and cultural events and introduced the use of tape and electroacoustic technology.\nHis compositional process was increasingly involved with specific performers, whom he chose for their tone and expressive characteristics. This trust reflects on Nono’s interest in collaboration, developing the idea that traditional musical notation is limited and cannot reproduce the complexity of performance he reached with every performer.\nThis recording represents one of Nono’s most fruitful collaborations, the one he developed with flutist Roberto Fabbriciani during the 1980s. The track list presented here –– selected by Fabbriciani and Alvise Vidolin –– explores Nono’s music as it is defined by space (and/or the acoustic space) rather than time — the auditory impression of a labyrinthine acoustic environment in which the works seem to ﬂoat on the threshold of sound and silence and seem to fluctuate from one place to another",
+        "credits": "Luigi Nono (composer 1,2,3)\nRoberto Fabbriciani, flutes, piccolo (1,2,4), composer (4)\nUlrich Krieger, contrabass clarinet (1)\nAlvise Vidolin, live electronics, sound direction\nAlessandro Fiordelmondo, live electronics assistant"
+      },
+      "year": 2025,
+      "month": 6,
+      "label": "Mode records",
+      "address": "New York NY, USA",
+      "catalogNumber": "Mode 349",
+      "urls": [
+        {
+          "name": "Mode records",
+          "url": "https://moderecords.com/catalog/349nono/"
+        },
+        {
+          "name": "Bandcamp",
+          "url": "https://moderecords.bandcamp.com/album/luigi-nono-volume-2-works-with-flute-mode-349"
+        }
+      ],
+      "url": "https://moderecords.com/catalog/349nono/",
+      "images": [
+        {
+          "name": "presentation",
+          "path": "img/2025-luiginonov2-presentation.jpeg"
+        },
+        {
+          "name": "front",
+          "path": "img/2025-luiginonov2-front.jpeg"
+        },
+        {
+          "name": "retro",
+          "path": "img/2025-luiginonov2-retro.jpeg"
+        }
+      ]
+
+    },
     {
       "type": "Journal article",
       "author": [

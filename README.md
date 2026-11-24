@@ -153,6 +153,13 @@ ISSN: 1573-7721
 URL: https://doi.org/10.1007/s11042-025-20609-4  
 
 
+### Luigi Nono Volume 2: Works with Flute
+
+**Album**  
+ (2025). *Luigi Nono Volume 2: Works with Flute*.  
+URL: https://moderecords.com/catalog/349nono/  
+
+
 ### Towards a Repository Template for Music Technology Research
 
 **Conference paper**  
@@ -236,6 +243,15 @@ URL: https://www.researchgate.net/publication/329281204_PhOS_a_photo-sensitive_g
 ## Teaching
 
 
+### Tecnologie del suono e della multimedialità (AFAM047)`Nov 2026 – ongoing — Parma PR ITALY`
+
+**Institute**: Conservatory "Arrigo Boito" Parma   
+**Department**: Electronic Music  
+<sub>Academic years: 2026/2027</sub>  
+<sub>Language: IT</sub>  
+<sub>Contract type (IT): Contratto di lavoro a tempo determinato</sub>  
+
+
 ### Applicazioni Forensi della psicologia cognitiva`Oct 2026 – Sep 2027 — Padova PD ITALY`
 
 **Institute**: University of Padua  
@@ -245,7 +261,7 @@ URL: https://www.researchgate.net/publication/329281204_PhOS_a_photo-sensitive_g
 <sub>Contract type (IT): Contratto di docenza</sub>  
 
 
-### Tecnologie del suono e della multimedialità (AFAM047 - ex COME/04 Elettroacustica)`Jan 2026 – ongoing — Cesena FC ITALY`
+### Tecnologie del suono e della multimedialità (AFAM047 - ex COME/04 Elettroacustica)`Jan 2026 – Oct 2026 — Cesena FC ITALY`
 
 **Institute**: Conservatory "B. Maderna - G. Lettimi" Cesena-Rimini   
 **Department**: Electronic Music  
@@ -282,6 +298,15 @@ URL: https://www.researchgate.net/publication/329281204_PhOS_a_photo-sensitive_g
 <sub>Contract type (IT): Contratto di lavoro autonomo di docenza</sub>  
 
 
+### Computer Engineering for Music and Multimedia`Apr 2023 – ongoing — Padova PD ITALY`
+
+**Institute**: University of Padua  
+**Department**: Department of Information Engineering (DEI)  
+<sub>Academic years: 2023/2024 | 2024/2025 | 2025/2026</sub>  
+<sub>Language: EN</sub>  
+<sub>Contract type (IT): Contratto per attività didattica integrativa</sub>  
+
+
 ### Sound Design (ABTEC44)`Mar 2022 – Jul 2022 — Rovereto TN ITALY`
 
 **Institute**: Libera Accademia di Belle Arti (LABA) Trentino  
@@ -297,15 +322,6 @@ URL: https://www.researchgate.net/publication/329281204_PhOS_a_photo-sensitive_g
 **Institute**: University of Padua  
 **Department**: Dipartimento di Studi Linguastici e Letterari (DiSLL)  
 <sub>Academic years: 2020/2021 | 2020/2022 | 2024/2025 | 2025/2026</sub>  
-<sub>Language: EN</sub>  
-<sub>Contract type (IT): Contratto per attività didattica integrativa</sub>  
-
-
-### Computer Engineering for Music and Multimedia`Jun 2020 – ongoing — Padova PD ITALY`
-
-**Institute**: University of Padua  
-**Department**: Department of Information Engineering (DEI)  
-<sub>Academic years: 2023/2024 | 2024/2025 | 2025/2026</sub>  
 <sub>Language: EN</sub>  
 <sub>Contract type (IT): Contratto per attività didattica integrativa</sub>  
 
@@ -492,7 +508,7 @@ voice over: CHRISTIAN IANSANTE and MARIAGRAZIA POMPEI
 orginal music: GIORGIO BERTINELLI
 live electronics and interaction design: ALESSANDRO FIORDELMONDO
 light design ALESSIO SORO</sub>  
-<sub>**Promoted by**: MAGAM06, ROMA T and Audio Innova</sub>  
+<sub>**Promoted by**: MAGAM06, ROMA TRE and Audio Innova</sub>  
 
 
 ### Rondò 2022 `14 Jun 2022`
@@ -766,7 +782,7 @@ Event: Webinar: Tecnologie smart per il restauro, la conservazione, la movimenta
 Production of audio tracks using a dedicated AI system, including mastering and calibration for the SoundLamp system.  
 
 
-### Software developer — University of Padua `Sep 2025 – Oct 2026 — Padova PD ITALY`
+### Software developer — University of Padua `Sep 2025 – Oct 2025 — Padova PD ITALY`
 
 
 Development of interactive systems for the show "Caravanserraglio".  
